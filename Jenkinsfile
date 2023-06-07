@@ -30,9 +30,9 @@ pipeline {
                 sh "terraform validate" 
             }
         }
-        stage (" Action") {
+        stage ("action") {
             steps {
-                sh 'terraform apply --auto-approve' 
+                sh 'terraform ${action} --auto-approve' 
            }
         }
         stage("Deploy to EKS") {
